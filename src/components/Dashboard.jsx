@@ -80,8 +80,9 @@ function Dashboard() {
 
   // Export to CSV
   const handleExport = () => {
+    const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
     const params = new URLSearchParams(filters);
-    window.open(`http://localhost:5001/api/posts/export?${params}`, '_blank');
+    window.open(`${API_URL}/posts/export?${params}`, '_blank');
   };
 
   return (
